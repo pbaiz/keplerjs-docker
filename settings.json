@@ -63,7 +63,10 @@
 					"maxFileSize": 100000000
 				}
 			}
-		}
+		},
+	    "ga": {
+	      "id": "${GA_ID}"
+	    }
 	},
 	"upload": {
 		"targets": {
@@ -84,45 +87,45 @@
 	},
 	"geoinfo": {
 		"autoupdate": true,		
-		"geonamesUser": "<YOUR USER NAME>",
-		"ipinfodbKey": "<YOUR API KEY>"
+		"geonamesUser": "${GEOINFO_GEONAMES_USER}",
+		"ipinfodbKey": "${GEOINFO_IPINFODB_KEY}"
 	},
 	"weather": {
-		"wundergroundKey": "<YOUR API KEY>"
+		"wundergroundKey": "${WEATHER_WUNDERGROUND_KEY}"
 	},
     "openrouteservice": {
-		"name": "<YOUR NAME>",
-		"key": "<YOUR API KEY>"
+		"name": "${OPENROUTESERVICE_NAME}",
+		"key": "${OPENROUTESERVICE_KEY}"
 	},
 	"accounts": {
 		"verifyEmail": false,
 		"emailTemplates": {
-			"from": "Admin <no-reply@example.com>"
+			"from": "${ACCOUNTS_EMAILTEMPLATES_FROM}"
 		},
 		"github": {
 			"service": "github",
-			"clientId": "<YOUR CLIENT ID>",
-			"secret": "<YOUR API KEY>"
+			"clientId": "${ACCOUNTS_GITHUB_CLIENTID}",
+			"secret": "${ACCOUNTS_GITHUB_SECRET}"
 		},
 		"facebook": {
 			"service": "facebook",
-			"appId": "<YOUR APP ID>",
-			"secret": "<YOUR API KEY>"
+			"appId": "${ACCOUNTS_FACEBOOK_APPID}",
+			"secret": "${ACCOUNTS_FACEBOOK_SECRET}"
 		},
 		"google": {
 			"service": "google",
-			"clientId": "<YOUR CLIENT ID>",
-			"secret": "<YOUR SECRET>"
+			"clientId": "${ACCOUNTS_GOOGLE_CLIENTID}",
+			"secret": "${ACCOUNTS_GOOGLE_SECRET}"
 		},
 		"twitter": {
 			"service": "twitter",
-			"consumerKey": "<YOUR CONSUMER KEY>",
-			"secret": "<YOUR SECRET>"
+			"consumerKey": "${ACCOUNTS_TWITTER_CONSUMERKEY}",
+			"secret": "${ACCOUNTS_TWITTER_SECRET}"
 		},
 		"openstreetmap": {
 			"service": "openstreetmap",
-			"consumerKey": "<YOUR CONSUMER KEY>",
-			"secret": "<YOUR SECRET>"
+			"consumerKey": "${ACCOUNTS_OPENSTREETMAP_CONSUMERKEY}",
+			"secret": "${ACCOUNTS_OPENSTREETMAP_SECRET}"
 		}
 	}	
 }

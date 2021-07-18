@@ -22,8 +22,6 @@ ENV PATH=$PATH:/root/.meteor \
     ROOT_URL="http://localhost" \
     PORT=8800 \
     MONGO_URL="mongodb://0.0.0.0:27017/kepler"
-    # BIND_IP=<IPADDRESS>
-    # PORT=<PORT>
 
 RUN curl "https://install.meteor.com/?release=1.8.1" | /bin/sh
 
@@ -42,9 +40,9 @@ RUN npm i
 RUN meteor build --directory ./ --server=$ROOT_URL:$PORT
 RUN cd /kepler/bundle/programs/server && npm i
 
-COPY ./docker-entrypoint.sh ./docker-entrypoint.sh
-COPY ./settings.sample.json ./settings.json
+COPY ./docker-entrypoint.sh .
+COPY ./env2settings.js .
+#COPY ./settings.json .
 
-EXPOSE 80
 ENTRYPOINT ["/bin/bash"]
 CMD ["/kepler/docker-entrypoint.sh"]

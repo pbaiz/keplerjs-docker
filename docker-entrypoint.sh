@@ -6,7 +6,7 @@
 # BIND_IP=<IPADDRESS>
 # PORT=<PORT>
 #
-METEOR_SETTINGS="$(cat ./settings.json )"
+export METEOR_SETTINGS=$(node env2settings.js settings.json)
 
 printenv | sort
 

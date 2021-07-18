@@ -29,10 +29,11 @@ services:
       #MAIL_URL: "smtp://localhost:25"      
       ROOT_URL: http://localhost
       PORT: 8800
-    # METEOR_SETTINGS=$(cat settings.json)
-    # BIND_IP=<IPADDRESS>>
+    env_file:
+      - ./kepler.env
+
     volumes:
      - ./static:/kepler/static
-    # - ./settings.json:/kepler/settings.json
+     - ./settings.json:/kepler/settings.json
     depends_on:
      - mongodb
