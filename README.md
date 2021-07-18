@@ -3,14 +3,16 @@
 Docker image for KeplerJs
 
 
-# usage
+# Configure
 
 ```bash
 cp kepler.example.env kepler.env
 ```
-and fill values with your secrets keys
+and edit ```kepler.env``` with your secrets api keys
 
-edit ```settings.json```
+edit ```settings.json``` for customizations
+
+# Start
 
 ```bash
 docker-compose up kepler

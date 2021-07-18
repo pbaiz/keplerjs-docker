@@ -8,6 +8,9 @@
 #
 export METEOR_SETTINGS=$(node env2settings.js settings.json)
 
-printenv | sort
+#printenv | sort
+
+echo "Listen on ${ROOT_URL}:${PORT}"
+#echo "${METEOR_SETTINGS}"
 
 node ./bundle/main.js

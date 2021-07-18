@@ -46,7 +46,7 @@
 				"openstreetmap": false
 			},
 			"ui": {
-				"passwordSignupFields": "USERNAME_AND_EMAIL"
+				"passwordSignupFields": "USERNAME_AND_OPTIONAL_EMAIL"
 			}
 		},
 		"upload": {

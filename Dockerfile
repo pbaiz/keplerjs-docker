@@ -36,7 +36,6 @@ RUN git clone \
 WORKDIR /kepler
 
 RUN npm i
-
 RUN meteor build --directory ./ --server=$ROOT_URL:$PORT
 RUN cd /kepler/bundle/programs/server && npm i
 
