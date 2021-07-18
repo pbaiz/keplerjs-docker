@@ -1,0 +1,38 @@
+version: '3'
+
+networks:
+  default:
+    driver: bridge
+
+services:
+
+  mongodb:
+    container_name: kepler-mongodb
+    image: mongo:latest
+    ports:
+       - "8827:27017"
+    #volumes:
+    #  - ./datadb:/data
+    environment:
+      - MONGO_INITDB_DATABASE=kepler
+
+  kepler:
+    container_name: kepler
+    ports: ["8800:8800"]
+    image: kepler:latest
+    build:
+      context: ./
+      args:
+        - KEPLER_VERSION=1.7.0
+    environment:
+      MONGO_URL: mongodb://mongodb:27017/kepler
+      #MAIL_URL: "smtp://localhost:25"      
+      ROOT_URL: http://localhost
+      PORT: 8800
+    # METEOR_SETTINGS=$(cat settings.json)
+    # BIND_IP=<IPADDRESS>>
+    volumes:
+     - ./static:/kepler/static
+    # - ./settings.json:/kepler/settings.json
+    depends_on:
+     - mongodb
