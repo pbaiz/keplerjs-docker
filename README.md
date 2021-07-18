@@ -17,3 +17,7 @@ edit ```settings.json``` for customizations
 ```bash
 docker-compose up kepler
 ```
+
+# Docker hub
+
+https://hub.docker.com/r/keplerjs/kepler
