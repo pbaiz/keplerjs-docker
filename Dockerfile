@@ -12,9 +12,9 @@ RUN apt-get -yqq update \
         make \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ARG METEOR_VERSION=1.8.1 \
-    KEPLER_VERSION=1.7.0
-    #TODO get METEOR_VERSION from kepler.meteor/release
+ARG METEOR_VERSION=1.8.1
+ARG KEPLER_VERSION=1.7.0
+#TODO get METEOR_VERSION from kepler.meteor/release
 
 ENV PATH=$PATH:/root/.meteor \
     METEOR_ALLOW_SUPERUSER=1 \
@@ -30,7 +30,8 @@ RUN git clone \
     --single-branch \
     #--branch "v${KEPLER_VERSION}" \
     --branch "v1.7.0" \
-    https://github.com/Keplerjs/Kepler.git \
+    #https://github.com/Keplerjs/Kepler.git \
+    https://github.com/pbaiz/Kepler.git \
     /kepler    
 
 WORKDIR /kepler
